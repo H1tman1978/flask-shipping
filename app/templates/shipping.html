@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+      <div class="content">
+        <div class="row">
+          <div class="col-md-9 shipping_col">
+            <p class="login_legend">Request To Ship A Package</p>
+            <div class="card shipping_card">
+              <div class="card-header ">
+                <div class="steps_div d-flex justify-content-lg-center">
+                  <img src="/static/assets/img/step1.svg" class="img-fluid steps_icon" defer>
+                </div>
+              </div>
+              <div class="card-body">
+                <form method="POST" id="shipping_form">
+
+                  <div class="row_1">
+
+                    <div class="row d-flex justify-content-center row_1">
+
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <input type="" name="" class="form-control shipping_input" placeholder="Ship From Location" required>
+                        </div>
+                      </div>
+
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <input type="" name="" class="form-control shipping_input" placeholder="Ship To Location" required>
+                        </div>
+                      </div>
+
+                      <div class="col-md-5"></div>
+
+                      <div class="col-md-5">
+                        <button type="button" class="float-right next_btn" id="next_btn1" >Next</button>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="row_2">
+
+                    <div class="row d-flex justify-content-center">
+
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <input type="" name="" class="form-control shipping_input" placeholder="Service Level">
+                        </div>
+                      </div>
+
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <textarea rows="1" class="shipping_area shipping_input" placeholder="Special Instructions"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="col-md-5">
+                        <button type="button" class="float-left prev_btn" id="prev_btn1">Prev</button>
+                      </div>
+
+                      <div class="col-md-5">
+                        <button type="button" class="float-right next_btn" id="next_btn2">Next</button>
+                      </div>
+                      
+                    </div>
+
+                  </div>
+
+                  <div class="row_3">
+                    <div class="row d-flex justify-content-center" id="row_3">
+
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <input type="" name="" class="form-control shipping_input" placeholder="Package Contents">
+                        </div>
+                      </div>
+
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <input type="" name="" class="form-control shipping_input" placeholder="Package Code">
+                        </div>
+                      </div>
+
+                      <div class="col-md-5">
+                        <button type="button" class="float-left prev_btn" id="prev_btn2">Prev</button>
+                      </div>
+
+                      <div class="col-md-5">
+                        <button type="submit" class="float-right next_btn">Next</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

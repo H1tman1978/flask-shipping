@@ -1,0 +1,130 @@
+
+<script>
+
+     $(".row_2").hide();
+     $(".row_3").hide();
+
+	$("#next_btn1").on("click", function(){
+		$(".row_1").hide();
+		$(".steps_icon").attr("src", "/static/assets/img/step2.svg");
+		$(".row_2").show();
+	});
+
+	$("#next_btn2").on("click", function(){
+		$(".row_2").hide();
+		$(".steps_icon").attr("src", "/static/assets/img/step3.svg");
+		$(".row_3").show();
+	});
+
+	$("#prev_btn1").on("click", function(){
+		$(".row_2").hide();
+		$(".steps_icon").attr("src", "/static/assets/img/step1.svg");
+		$(".row_1").show();
+	});
+
+	$("#prev_btn2").on("click", function(){
+		$(".row_3").hide();
+		$(".steps_icon").attr("src", "/static/assets/img/step2.svg");
+		$(".row_2").show();
+	});
+
+	// Submitting The Shipping Form
+
+	$(".shipping_form").on("submit", function(e){
+		e.preventDefault();
+
+		var 
+
+		req = $.ajax({
+			url: '/request_shipping',
+			type: 'POST',
+			data: {  }
+		})
+
+	});
+
+	// Validating and Submitting the Register Form
+	
+	$("#register_form").on("submit", function(e){
+
+		// Preventing the form from automatically submitting
+		e.preventDefault();
+
+		// Getting the name, email, password and re_password value using thier ID
+		const name = $("#name").val();
+		const email = $("#email").val();
+		const password = $("#password").val();
+		const re_password = $("#re_password").val();
+
+		// Comparing the password and re_password to see if they match
+		// If they don't we throw an error error, else we submit the form
+		// using JQuery Ajax
+
+		if (password !== re_password){
+			// If passwords do not match, we change the text of an empty <span> to
+			// to say "Passwords do not match".
+			$(".error4").text("Passwords do not match");
+		}else{
+			// Submitting the form
+
+			req = $.ajax({
+				url: '/register',
+				type: 'POST',
+				data: {name:name, email:email, password:password},
+
+				// On success function, we get the data returned and
+				// check its value to decide what message we send
+				success: function(data){
+					// If message is success we redirect the user to the login page
+
+					if (data.data == "success"){
+						alert("Account successfully created")
+					}
+					// If message is exist we alert user already exists
+
+					if (data.data == "exist"){
+						alert("User already exist")
+					}
+				}
+			})
+
+		}
+
+	});
+
+
+	//Validating and Submitting the Login Form
+	
+	$("#login_form").on("submit", function(e){
+
+		// Preventing the form from automatically submitting
+		e.preventDefault();
+
+		// Getting the email and password value using thier ID
+		const email = $("#email").val();
+		const password = $("#password").val();
+
+		req = $.ajax({
+			url: '/login',
+			type: 'POST',
+			data: {email:email, password:password},
+
+			// On success function, we get the data returned and
+			// check its value to decide what message we send
+			success: function(data){
+				// If message is success we redirect the user to the dashboard page
+
+				if (data.data == "success"){
+					alert("Logged in successfully")
+				}
+				// If message is error we send a different message
+
+				if (data.data == "error"){
+					alert("Invalid username and password");
+				}
+			}
+		});
+
+	});
+
+</script>

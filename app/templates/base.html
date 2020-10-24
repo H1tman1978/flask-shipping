@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title> IBM Shipping Service / {% block title %}{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="/static/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="/static/assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <link href="/static/assets/demo/demo.css" rel="stylesheet" />
+  {% include 'custom.css' %}
+</head>
+
+<body class="">
+  <div class="wrapper">
+
+    {% block sidebar %}
+    <div class="sidebar left_sidebar">
+      <div class="sidebar-wrapper">
+
+        <ul class="nav">
+          <li>
+            <a href="./dashboard.html">
+              <i class="tim-icons icon-bank sidebar_log"></i>
+            </a>
+          </li>
+          <br>
+          <br>
+          <br>
+          <li>
+            <a href="./icons.html">
+              <i class="tim-icons icon-attach-87 sidebar_log"></i>
+            </a>
+          </li>
+          <br>
+          <br>
+          <br>
+          <li>
+            <a href="./icons.html">
+              <i class="tim-icons icon-badge sidebar_log"></i>
+            </a>
+          </li>
+          <br>
+          <br>
+          <br>
+          <li>
+            <a href="./icons.html">
+              <i class="tim-icons icon-settings sidebar_log"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endblock %}
+
+
+    <div class="main-panel">
+
+      {% block navbar %}
+
+      <nav class="navbar navbar-expand-lg navbr">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('shipping')}}">Request Shipping <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Dashboard</a>
+              </li>
+              <li class="dropdown nav-item">
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <div class="photo">
+                    <img src="/static/assets/img/anime3.png" alt="Profile Photo">
+                  </div>
+                  <b class="caret d-none d-lg-block d-xl-block"></b>
+                  <p class="d-lg-none">
+                    Log out
+                  </p>
+                </a>
+                <ul class="dropdown-menu dropdown-navbar">
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
+                  <li class="dropdown-divider"></li>
+                  <li class="nav-link"><a href="{{url_for('logout')}}" class="nav-item dropdown-item">Log out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {% endblock %}
+
+      {% block content %}
+
+      {% endblock %}
+
+      {% block footer %}
+      <footer class="footer fixed-bottom">
+        <div class="container-fluid">
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link">
+                IBM
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link">
+                Tony Rolfe
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link">
+                About Us
+              </a>
+            </li>
+          </ul>
+          <div class="copyright">
+            ©
+            <script>
+              document.write(new Date().getFullYear())
+            </script> made by <i class="tim-icons icon-heart-2"></i> by
+            <a href="https://facebook.com/davidnelson" target="_blank">David Nelson</a>
+          </div>
+        </div>
+      </footer>
+      {% endblock %}
+    </div>
+  </div>
+
+  <script src="/static/assets/js/core/jquery.min.js"></script>
+  <script src="/static/assets/js/core/popper.min.js"></script>
+  <script src="/static/assets/js/core/bootstrap.min.js"></script>
+  <script src="/static/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="/static/assets/js/plugins/bootstrap-notify.js"></script>
+  {% include 'script.html' %}
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+SECRET_KEY = 'akelachi8899'
+SQLALCHEMY_DATABASE_URI = "sqlite:///book_application.db"
+SQLALCHEMY_TRACK_MODIFICATIONS = False

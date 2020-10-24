@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+      <div class="content">
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-xl-9">
+            <div class="card dashboard_body">
+              <div class="card-header">
+              </div>
+              <div class="card-body login_card_body">
+                <form method="POST" id="register_form">
+                  <p class="login_legend">Sign Up To IBM Shipping Service</p>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="email" class="form-control register_input" id="email" placeholder="Email Address" required />
+                        <span class="error_span error1"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input class="form-control register_input" id="name" placeholder="Fullname" required />
+                        <span class="error_span error2"></span>
+                      </div>
+                    </div>
+                    <hr id="line_break">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input class="form-control register_input" id="password" placeholder="Password" required />
+                        <span class="error_span error3"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input class="form-control register_input" id="re_password" placeholder="Password (Again) " required />
+                        <span class="error_span error4"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <button class="btn-block login_button">Sign Up</button>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="text-left bottom_questions">Already Have an Account? <a href="{{url_for('login')}}">Sign in</a></p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

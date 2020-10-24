@@ -1,0 +1,252 @@
+<style>
+body{
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  user-select: none !important;
+  background: #02020E !important;
+}
+
+.main-panel{
+  border-top-color: #581B98;
+  background: #02020E !important;
+}
+
+.content{
+  background-color: #02020E;
+}
+
+footer{
+  background-color: #02020E;
+}
+
+.dashboard_body{
+  background-color: #040416;
+}
+
+.login_legend{
+  font-size: 20px;
+  color: #F5F5F5;
+  margin-left: 2px;
+  margin-top: -10px;
+}
+
+.login_input{
+  transition: 0.5s all ease-in-out;
+  border: 2px solid #581B98;
+  font-size: 15px;
+  color: #F0F8FF;
+  margin-top: -12px;
+}
+
+.login_input:focus{
+  border: 2px solid #482ff7;
+}
+
+.login_input::placeholder{
+  color: #F0F8FF;
+}
+
+.register_input{
+  transition: 0.5s all ease-in-out;
+  border: 2px solid #581B98;
+  font-size: 15px;
+  color: #F0F8FF;
+  margin-top: -12px;
+}
+
+.register_input:focus{
+  border: 2px solid #482ff7;
+}
+
+.register_input::placeholder{
+  color: #F0F8FF;
+}
+
+.login_button{
+  outline: 0px;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background: #581B98;
+  font-size: 17px;
+  color: #F0F8FF;
+  transition: 0.6s all ease-in-out;
+  margin-top: 5px;
+}
+
+.login_button:hover{
+  background: #482ff7;
+}
+
+.login_button:focus{
+  outline: 0px;
+  border: none;
+}
+
+.bottom_questions{
+  margin-top: 5px;
+  color: #9D9BAE !important;
+}
+
+.bottom_questions a{
+  transition: 0.4s all ease-in-out;
+  color: #938CC0;
+}
+
+.bottom_questions a:hover{
+  color: #CECCDB;
+}
+
+.login_card_body{
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+}
+
+#line_break{
+  margin-bottom: 45px !important;
+}
+
+
+.left_sidebar{
+  width: 90px;
+  height: 400px;
+}
+
+.sidebar_log{
+  background: #482FF7 !important;
+  border-radius: 3.5px;
+  margin-left: 1.5px;
+}
+
+.sidebar-wrapper{
+  background-color: #030317 !important;
+}
+
+.navbr{
+  background-color: #030317 !important;
+}
+
+.dashboard_col{
+  margin-left: -100px;
+  margin-top: -61px;
+}
+
+.user_sent_request{
+  height: 200px;
+  overflow-y: scroll;
+  display: flex !important;
+  border-radius: 2px;
+}
+
+
+.user_sent_request::-webkit-scrollbar {
+  width: 10px;
+}
+
+.user_sent_request::-webkit-scrollbar-track {
+  background: #e2f3f5;
+}
+
+/* Handle */
+.user_sent_request::-webkit-scrollbar-thumb {
+  background: #581b98;
+  transition: 0.4s all ease-in-out;
+  cursor: pointer !important;
+}
+
+/* Handle on hover */
+.user_sent_request::-webkit-scrollbar-thumb:hover {
+  background: #482ff7;
+}
+
+.error_span{
+  color: #d72323;
+  margin-left: 5px;
+}
+
+.shipping_card{
+  border: 3px solid #242473;
+  background-color: transparent;
+}
+
+.steps_icon{
+  width: 450px !important;
+  cursor: pointer;
+}
+
+.shipping_col{
+  margin-left: -50px;
+  margin-top: -55px;
+}
+
+.next_btn{
+  outline: 0px !important;
+  border: none;
+  padding: 5.5px 33px;
+  border-radius: 3px;
+  background: #581B98;
+  font-size: 17px;
+  color: #F0F8FF;
+  transition: 0.6s all ease-in-out;
+  margin-top: -1px;
+}
+
+.next_btn:hover{
+  background: #5A3185;
+}
+
+.prev_btn{
+  outline: 0px !important;
+  border: 2px solid #581B98;
+  padding: 5.5px 33px;
+  border-radius: 3px;
+  background: rgba(88, 27, 152, 0.31);
+  font-size: 17px;
+  color: #F0F8FF;
+  transition: 0.6s all ease-in-out;
+  margin-top: -1px;
+}
+
+.prev_btn:hover{
+  background: rgba(88, 27, 152, 0.53);
+}
+
+.shipping_area{
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.5rem 0.7rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.428571;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 1px solid #cad1d7;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.shipping_area::-webkit-scrollbar {
+  display: none !important;
+}
+
+.shipping_input{
+  transition: 0.5s all ease-in-out;
+  border: 2px solid #581B98;
+  font-size: 15px;
+  color: #F0F8FF;
+}
+
+.shipping_input:focus{
+  border: 2px solid #482ff7;
+  outline: 0px !important;
+  box-shadow: none !important;
+}
+
+.shipping_input::placeholder{
+  color: #F0F8FF;
+}
+
+</style>

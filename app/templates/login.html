@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+      <div class="content">
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-xl-9">
+            <div class="card dashboard_body">
+              <div class="card-header">
+              </div>
+              <div class="card-body login_card_body">
+                <form method="POST" id="login_form">
+                  <p class="login_legend">Login To IBM Shipping Service</p>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="email" class="form-control login_input" id="email" placeholder="Email Address" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input class="form-control login_input" id="password" placeholder="Password" required />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <button class="btn-block login_button">Sign In</button>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="text-left bottom_questions">Dont Have an Account? <a href="{{url_for('register')}}">Create one</a></p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="text-right bottom_questions"><a href="/forgottenpassword">Forgotten Password?</a></p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
