@@ -21,17 +21,29 @@ class Users(UserMixin, db.Model):
 
 class Shipping(db.Model):
 	id = db.Column(db.Integer, primary_key=True, unique=True)
-	from_location = db.Column(db.String(), nullable=False)
-	to_location = db.Column(db.String(), nullable=False)
-	service_level = db.Column(db.String(100), nullable=False)
+
+	ship_to_company = db.Column(db.String(70), nullable=False)
+	ship_from_company = db.Column(db.String(70), nullable=False)
+
+	ship_to_city = db.Column(db.String(70), nullable=False)
+	ship_from_city = db.Column(db.String(70), nullable=False)
+
+	ship_to_zip = db.Column(db.Integer(), nullable=False)
+	ship_from_zip = db.Column(db.Integer(), nullable=False)
+
+	ship_to_phone_number = db.Column(db.String(70), nullable=False)
+	external_phone_number = db.Column(db.String(70), nullable=False)
+
+	ship_to_address = db.Column(db.String(70), nullable=False)
+	ship_from_address = db.Column(db.String(70), nullable=False)
+
+	ship_to_state = db.Column(db.String(70), nullable=False)
+	ship_from_state = db.Column(db.String(70), nullable=False)
+
+	senders_name = db.Column(db.String(70), nullable=False)
+	internal_address = db.Column(db.String(70), nullable=False)
+
 	special_instructions = db.Column(db.Text(400), nullable=False)
-	package_contents = db.Column(db.String(100), nullable=False)
-	package_code = db.Column(db.String(30), nullable=False)
-	date_requested = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
+	department = db.Column(db.String(70), nullable=False)
 
 	user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-
-	def __repr__(self):
-		return f"from location: {self.from_location} to location: {self.to_location}\
-			service level: {self.service_level} special instructions: {self.special_instructions}\
-			package contents: {self.package_contents} package code: {self.package_code} "

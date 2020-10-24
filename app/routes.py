@@ -4,9 +4,12 @@ from flask import render_template, request,\
 	redirect, url_for, jsonify, flash
 from flask_login import current_user, logout_user, login_user
 
+@app.route("/")
 @app.route("/dashboard")
 def home():
-	return render_template("dashboard.html")
+	if current_user.is_authenticated:
+		return render_template("dashboard.html")
+	return redirect(url_for('login'))
 
 def hash_password(password):
 	return bcrypt.generate_password_hash(password).decode('utf-8')

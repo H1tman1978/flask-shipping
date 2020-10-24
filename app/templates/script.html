@@ -5,41 +5,45 @@
      $(".row_3").hide();
 
 	$("#next_btn1").on("click", function(){
-		$(".row_1").hide();
-		$(".steps_icon").attr("src", "/static/assets/img/step2.svg");
-		$(".row_2").show();
-	});
-
-	$("#next_btn2").on("click", function(){
-		$(".row_2").hide();
-		$(".steps_icon").attr("src", "/static/assets/img/step3.svg");
-		$(".row_3").show();
+		$(".row_1").hide(1000, function(){
+			$(".row_2").show(1000, function(){
+				$(".steps_icon").attr("src", "/static/assets/img/step2.svg");
+			});
+		});
 	});
 
 	$("#prev_btn1").on("click", function(){
-		$(".row_2").hide();
-		$(".steps_icon").attr("src", "/static/assets/img/step1.svg");
-		$(".row_1").show();
+		$(".row_2").hide(1000, function(){
+			$(".row_1").show(1000, function(){
+				$(".steps_icon").attr("src", "/static/assets/img/step1.svg");
+			});
+		});
 	});
 
 	$("#prev_btn2").on("click", function(){
-		$(".row_3").hide();
-		$(".steps_icon").attr("src", "/static/assets/img/step2.svg");
-		$(".row_2").show();
+		$(".row_3").hide(1000, function(){
+			$(".row_2").show(1000, function(){
+				$(".steps_icon").attr("src", "/static/assets/img/step2.svg");
+			});
+		});
 	});
 
 	// Submitting The Shipping Form
 
-	$(".shipping_form").on("submit", function(e){
+	$("#shipping_form").on("submit", function(e){
 		e.preventDefault();
 
-		var 
+		$(".row_2").hide(1000, function(){
+			$(".row_3").show(1000, function(){
+				$(".steps_icon").attr("src", "/static/assets/img/step3.svg");
+			});
+		});
 
-		req = $.ajax({
-			url: '/request_shipping',
-			type: 'POST',
-			data: {  }
-		})
+		// req = $.ajax({
+		// 	url: '/request_shipping',
+		// 	type: 'POST',
+		// 	data: {  }
+		// });
 
 	});
 
@@ -78,7 +82,7 @@
 					// If message is success we redirect the user to the login page
 
 					if (data.data == "success"){
-						alert("Account successfully created")
+						window.location.replace("/login")
 					}
 					// If message is exist we alert user already exists
 
@@ -115,7 +119,7 @@
 				// If message is success we redirect the user to the dashboard page
 
 				if (data.data == "success"){
-					alert("Logged in successfully")
+					window.location.replace('/dashboard');
 				}
 				// If message is error we send a different message
 

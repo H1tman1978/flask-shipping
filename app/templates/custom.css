@@ -32,14 +32,14 @@ footer{
 
 .login_input{
   transition: 0.5s all ease-in-out;
-  border: 2px solid #581B98;
+  border: 2px solid #0530AD;
   font-size: 15px;
   color: #F0F8FF;
   margin-top: -12px;
 }
 
 .login_input:focus{
-  border: 2px solid #482ff7;
+  border: 2px solid #0F62FE;
 }
 
 .login_input::placeholder{
@@ -48,14 +48,14 @@ footer{
 
 .register_input{
   transition: 0.5s all ease-in-out;
-  border: 2px solid #581B98;
+  border: 2px solid #0530AD;
   font-size: 15px;
   color: #F0F8FF;
   margin-top: -12px;
 }
 
 .register_input:focus{
-  border: 2px solid #482ff7;
+  border: 2px solid #0F62FE;
 }
 
 .register_input::placeholder{
@@ -67,7 +67,7 @@ footer{
   border: none;
   padding: 8px 10px;
   border-radius: 5px;
-  background: #581B98;
+  background: #0530AD;
   font-size: 17px;
   color: #F0F8FF;
   transition: 0.6s all ease-in-out;
@@ -75,7 +75,7 @@ footer{
 }
 
 .login_button:hover{
-  background: #482ff7;
+  background: #0F62FE;
 }
 
 .login_button:focus{
@@ -113,17 +113,17 @@ footer{
 }
 
 .sidebar_log{
-  background: #482FF7 !important;
+  background: #161616 !important;
   border-radius: 3.5px;
   margin-left: 1.5px;
 }
 
 .sidebar-wrapper{
-  background-color: #030317 !important;
+  background-color: #0530AD !important;
 }
 
 .navbr{
-  background-color: #030317 !important;
+  background-color: #0530AD !important;
 }
 
 .dashboard_col{
@@ -165,7 +165,7 @@ footer{
 }
 
 .shipping_card{
-  border: 3px solid #242473;
+  border: 3px solid #001D6C;
   background-color: transparent;
 }
 
@@ -182,9 +182,9 @@ footer{
 .next_btn{
   outline: 0px !important;
   border: none;
-  padding: 5.5px 33px;
+  padding: 5.9px 33px;
   border-radius: 3px;
-  background: #581B98;
+  background: #0530AD;
   font-size: 17px;
   color: #F0F8FF;
   transition: 0.6s all ease-in-out;
@@ -192,15 +192,15 @@ footer{
 }
 
 .next_btn:hover{
-  background: #5A3185;
+  background: #0F62FE;
 }
 
 .prev_btn{
   outline: 0px !important;
-  border: 2px solid #581B98;
+  border: 2px solid #0530AD;
   padding: 5.5px 33px;
   border-radius: 3px;
-  background: rgba(88, 27, 152, 0.31);
+  background: rgba(5, 48, 173, 0.29);
   font-size: 17px;
   color: #F0F8FF;
   transition: 0.6s all ease-in-out;
@@ -208,7 +208,7 @@ footer{
 }
 
 .prev_btn:hover{
-  background: rgba(88, 27, 152, 0.53);
+  background: rgba(5, 48, 173, 0.4);
 }
 
 .shipping_area{
@@ -234,13 +234,13 @@ footer{
 
 .shipping_input{
   transition: 0.5s all ease-in-out;
-  border: 2px solid #581B98;
+  border: 2px solid #525252;
   font-size: 15px;
   color: #F0F8FF;
 }
 
 .shipping_input:focus{
-  border: 2px solid #482ff7;
+  border: 2px solid #0530AD;
   outline: 0px !important;
   box-shadow: none !important;
 }
@@ -249,4 +249,34 @@ footer{
   color: #F0F8FF;
 }
 
+.photo{
+  border: 2px solid #161616 !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.spin::before {
+  animation: 1.5s linear infinite spinner;
+  animation-play-state: inherit;
+  border: solid 5px #cfd0d1;
+  border-bottom-color: #1c87c9;
+  border-radius: 50%;
+  content: "";
+  height: 40px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 40px;
+  will-change: transform;
+}
+
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
 </style>

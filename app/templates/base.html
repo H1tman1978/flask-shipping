@@ -71,12 +71,12 @@
                 <a class="nav-link" href="{{url_for('shipping')}}">Request Shipping <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Dashboard</a>
+                <a class="nav-link" href="{{url_for('home')}}">Dashboard</a>
               </li>
               <li class="dropdown nav-item">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="/static/assets/img/anime3.png" alt="Profile Photo">
+                    <img src="{{ current_user.email | gravatar }}" alt="Profile Photo" class="base_user_image">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
