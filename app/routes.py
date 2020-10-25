@@ -55,13 +55,11 @@ def logout():
 def shipping():
 	if current_user.is_authenticated:
 		if request.method == "POST":
-			new_shipping = Shipping(from_location=request.form['from_location'],\
-				to_location=request.form['to_location'], service_level=request.form['service_level'],\
-				special_instructions=request.form['special_instructions'], \
-				package_contents=request.form['package_contents'],\
-				package_code=request.form['package_code'], author=current_user)
-			db.session.add(new_shipping)
-			db.session.commit()
+			data = request.form
+			print(data['ship_to_company'])
+			# new_shipping = Shipping(ship_to_company=data.)
+			# db.session.add(new_shipping)
+			# db.session.commit()
 			return jsonify({'data':'success'})
 		return render_template('shipping.html')
 	else:

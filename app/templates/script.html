@@ -39,11 +39,32 @@
 			});
 		});
 
-		// req = $.ajax({
-		// 	url: '/request_shipping',
-		// 	type: 'POST',
-		// 	data: {  }
-		// });
+		var ship_to_company = $("#ship_to_company").val();
+		var ship_to_address = $("#ship_to_address").val();
+		var ship_to_city = $("#ship_to_city").val();
+		var ship_to_state = $("#ship_to_state").val();
+		var ship_to_zip = $("#ship_to_zip").val();
+		var special_instructions = $("#special_instructions").val();
+		var ship_to_phone_number = $("#ship_to_phone_number").val();
+
+		var ship_from_company = $("#ship_from_company").val();
+		var senders_name = $("#senders_name").val();
+		var ship_from_address = $("#ship_from_address").val();
+		var ship_from_city = $("#ship_from_city").val();
+		var ship_from_state = $("#ship_from_state").val();
+		var ship_from_zip = $("#ship_from_zip").val();
+		var internal_address = $("#internal_address").val();
+		var external_phone_number = $("#external_phone_number").val();
+		var department = $("#department").val();
+
+		req = $.ajax({
+			url: '/request_shipping',
+			type: 'POST',
+			data: { ship_to_company, ship_to_address, ship_to_city, ship_to_state, ship_to_zip, special_instructions, ship_to_phone_number, ship_from_company, senders_name, ship_from_address, ship_from_city, ship_from_state, ship_from_zip, internal_address, external_phone_number, department },
+			success: function(){
+				window.location.replace("/dashboard");
+			}
+		});
 
 	});
 
