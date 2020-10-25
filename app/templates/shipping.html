@@ -22,39 +22,46 @@
 
                     <div class="row">
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Company" id="ship_to_company">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="Company" id="ship_to_company">
                       </div>
 
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Address" id="ship_to_address">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="Address" id="ship_to_address">
                       </div>
 
                       <hr style="margin-bottom: 40px !important;">
 
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="City" id="ship_to_city">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="City" id="ship_to_city">
                       </div>
 
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="State" id="ship_to_state">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="State" id="ship_to_state">
                       </div>
 
                       <hr style="margin-bottom: 40px !important;">
 
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Zip" id="ship_to_zip">
+                        <input required type="number" name="" class="form-control shipping_input" placeholder="Zip" id="ship_to_zip">
                       </div>
 
                       <div class="col-md-6">
-                        <textarea rows="1" class="shipping_area shipping_input" placeholder="Special Instructions" id="special_instructions"></textarea>
+                        <textarea required rows="1" class="shipping_area shipping_input" placeholder="Special Instructions" id="special_instructions"></textarea>
                       </div>
 
                       <hr style="margin-bottom: 40px !important;">
 
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Phone Number" id="ship_to_phone_number">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="Phone Number" id="ship_to_phone_number">
                       </div>
 
+                      <div class="col-md-6">
+                        <textarea required rows="1" class="shipping_area shipping_input" placeholder="Item Description" id="item_description"></textarea>
+                      </div>
+
+                      <hr style="margin-bottom: 40px !important;">
+                      <div class="col-md-6">
+                      </div>
                       <div class="col-md-6">
                         <button type="button" class="btn-block next_btn" id="next_btn1" >Next</button>
                       </div>
@@ -69,47 +76,47 @@
                     <div class="row">
 
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Company Name" id="ship_from_company">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="Company Name" id="ship_from_company">
                       </div>
 
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Sender's Name" id="senders_name">
-                      </div>
-
-                      <hr style="margin-bottom: 40px !important;">
-
-                      <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Address" id="ship_from_address">
-                      </div>
-
-                      <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="City" id="ship_from_city">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="Sender's Name" id="senders_name">
                       </div>
 
                       <hr style="margin-bottom: 40px !important;">
 
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="State" id="ship_from_state">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="Address" id="ship_from_address">
                       </div>
 
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Zip" id="ship_from_zip">
-                      </div>
-
-                      <hr style="margin-bottom: 40px !important;">
-
-                      <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Internal Address" id="internal_address">
-                      </div>
-
-                      <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Tie Line / External Phone" id="external_phone_number">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="City" id="ship_from_city">
                       </div>
 
                       <hr style="margin-bottom: 40px !important;">
 
                       <div class="col-md-6">
-                        <input type="" name="" class="form-control shipping_input" placeholder="Division /  Dep." id="department">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="State" id="ship_from_state">
+                      </div>
+
+                      <div class="col-md-6">
+                        <input required type="number" name="" class="form-control shipping_input" placeholder="Zip" id="ship_from_zip">
+                      </div>
+
+                      <hr style="margin-bottom: 40px !important;">
+
+                      <div class="col-md-6">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="Tie Line / External Phone" id="external_phone_number">
+                      </div>
+
+                      <hr style="margin-bottom: 40px !important;">
+
+                      <div class="col-md-6">
+                        <input required type="" name="" class="form-control shipping_input" placeholder="Division /  Dep." id="department">
+                      </div>
+
+                      <div class="col-md-6">
+                        <input required type="number" name="" class="form-control shipping_input" placeholder="Quantity" id="quantity">
                       </div>
 
                       <div class="col-md-6">
@@ -130,9 +137,9 @@
                       <br>
                       <br>
                       <br>
-                      <div class="col-md-6 float-left">
+                      <div class="col-md-6 float-center">
                         <div class="float-right spin"></div>
-                        <span>Please stay with us while we process your form</span>
+                        <span class="info_text" style="margin-left: 40px;">Please stay with us while we process your form</span>
                       </div>
                     </div>
 

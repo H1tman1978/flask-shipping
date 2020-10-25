@@ -41,9 +41,13 @@ class Shipping(db.Model):
 	ship_from_state = db.Column(db.String(70), nullable=False)
 
 	senders_name = db.Column(db.String(70), nullable=False)
-	internal_address = db.Column(db.String(70), nullable=False)
 
 	special_instructions = db.Column(db.Text(400), nullable=False)
 	department = db.Column(db.String(70), nullable=False)
+
+	item_description = db.Column(db.Text(500), nullable=False)
+	quantity = db.Column(db.Integer(), nullable=False)
+
+	date_requested = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
 
 	user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)

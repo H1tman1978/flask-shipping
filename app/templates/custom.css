@@ -110,6 +110,8 @@ footer{
 .left_sidebar{
   width: 90px;
   height: 400px;
+  background-color: #0530AD !important;
+  border-radius: 10px !important;
 }
 
 .sidebar_log{
@@ -120,6 +122,7 @@ footer{
 
 .sidebar-wrapper{
   background-color: #0530AD !important;
+  border-radius: 10px !important;
 }
 
 .navbr{
@@ -253,6 +256,20 @@ footer{
   border: 2px solid #161616 !important;
   width: 32px !important;
   height: 32px !important;
+}
+
+.danger_error{
+  background: maroon !important;
+  color: aliceblue;
+}
+
+.error_div{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.info_text{
+  font-size: 16px;
 }
 
 .spin::before {

@@ -8,14 +8,13 @@ from flask_login import current_user, logout_user, login_user
 @app.route("/dashboard")
 def home():
 	if current_user.is_authenticated:
-		return render_template("dashboard.html")
+		shippings = Shipping.query.filter_by(author=current_user).all()
+		return render_template("dashboard.html", shippings=shippings)
+	flash("Not yet logged in", "warning")
 	return redirect(url_for('login'))
 
 def hash_password(password):
 	return bcrypt.generate_password_hash(password).decode('utf-8')
-
-# def send_email(email):
-# 	pass
 
 @app.route("/register", methods=["POST", "GET"])
 def register():
@@ -56,11 +55,21 @@ def shipping():
 	if current_user.is_authenticated:
 		if request.method == "POST":
 			data = request.form
-			print(data['ship_to_company'])
-			# new_shipping = Shipping(ship_to_company=data.)
-			# db.session.add(new_shipping)
-			# db.session.commit()
+			new_shipping = Shipping(ship_to_company=data['ship_to_company'],\
+				ship_from_company=data["ship_from_company"], ship_to_city=data["ship_to_city"],\
+				ship_from_city=data["ship_from_city"], ship_to_zip=data["ship_to_zip"],\
+				ship_from_zip=data["ship_from_zip"], ship_to_phone_number=data["ship_to_phone_number"],\
+				external_phone_number=data["external_phone_number"], ship_to_address=data["ship_to_address"],
+				ship_from_address=data["ship_from_address"], ship_to_state=data["ship_to_state"],\
+				ship_from_state=data["ship_from_state"], senders_name=data["senders_name"],\
+				special_instructions=data["special_instructions"],\
+				department=data["department"], item_description=data["item_description"],\
+				quantity=data["quantity"], author=current_user)
+
+			db.session.add(new_shipping)
+			db.session.commit()
 			return jsonify({'data':'success'})
 		return render_template('shipping.html')
 	else:
+		flash("Not yet logged in", "warning")
 		return redirect(url_for('login'))

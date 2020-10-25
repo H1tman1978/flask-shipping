@@ -17,6 +17,15 @@
           <div class="col-xl-9">
             <div class="card dashboard_body">
               <div class="card-header">
+                <div class="error_div">
+                  {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                      {% for category, message in messages %}
+                        <div class="alert alert-{{category}}" role="alert">{{message}}</div>
+                      {% endfor %}
+                    {% endif %}
+                  {% endwith %}
+                </div>
               </div>
               <div class="card-body login_card_body">
                 <form method="POST" id="login_form">
