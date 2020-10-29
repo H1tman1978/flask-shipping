@@ -8,12 +8,15 @@ def load_user(id):
 
 class Users(UserMixin, db.Model):
 	id = db.Column(db.Integer, primary_key=True, unique=True)
-	name = db.Column(db.String(70), nullable=False)
+	first_name = db.Column(db.String(70), nullable=False)
+	last_name = db.Column(db.String(70), nullable=False)
+	user_name = db.Column(db.String(70), nullable=False)
 	email = db.Column(db.String(100), nullable=False)
+	slack_handle: db.Column(db.String(100), nullable=False)
 	password = db.Column(db.String(100), nullable=False)
 	date_joined = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
 
-	shippings = db.relationship("Shipping", backref="author", lazy=True)
+	# shippings = db.relationship("Shipping", backref="author", lazy=True)
 
 	def __repr__(self):
 		return f"Name: {self.name} Email: {self.email} Date Joined: {self.date_joined} "
@@ -21,33 +24,30 @@ class Users(UserMixin, db.Model):
 
 class Shipping(db.Model):
 	id = db.Column(db.Integer, primary_key=True, unique=True)
+	# Addresses
+	attention: db.Column(db.String(70), nullable=False)
+	company: db.Column(db.String(70), nullable=False)
+	address1: db.Column(db.String(70), nullable=False)
+	address2: db.Column(db.String(70), nullable=False)
+	city: db.Column(db.String(70), nullable=False)
+	state_province: db.Column(db.String(70), nullable=True)
+	postal_code: db.Column(db.String(70), nullable=False)
+	country: db.Column(db.String(70), nullable=True)
+	template_name: db.Column(db.String(70), nullable=True)
 
-	ship_to_company = db.Column(db.String(70), nullable=False)
-	ship_from_company = db.Column(db.String(70), nullable=False)
+	handling_unit = db.relationship("HandlingUnit", backref="shipping_handling_unit", lazy=True)
 
-	ship_to_city = db.Column(db.String(70), nullable=False)
-	ship_from_city = db.Column(db.String(70), nullable=False)
+class HandlingUnit(db.Model):
+	# HANDLING_UNIT:
+	case_number: db.Column(db.Integer, primary_key=True, unique=True)
+	instruction_id = db.Column(db.Integer, db.ForeignKey('shipping.id'), nullable=False)
 
-	ship_to_zip = db.Column(db.Integer(), nullable=False)
-	ship_from_zip = db.Column(db.Integer(), nullable=False)
+	type: db.Column(db.String(70), nullable=False) #string field (drop down field with box, pallet, case, drum, crate as options) Required
+	length: db.Column(db.Integer(), nullable=True) #float number representing the length of the handling unit. Optional for creating instruction, mandatory for shipping
+	width: db.Column(db.Integer(), nullable=True) #same as length
+	height: db.Column(db.Integer(), nullable=True) #same as length
 
-	ship_to_phone_number = db.Column(db.String(70), nullable=False)
-	external_phone_number = db.Column(db.String(70), nullable=False)
-
-	ship_to_address = db.Column(db.String(70), nullable=False)
-	ship_from_address = db.Column(db.String(70), nullable=False)
-
-	ship_to_state = db.Column(db.String(70), nullable=False)
-	ship_from_state = db.Column(db.String(70), nullable=False)
-
-	senders_name = db.Column(db.String(70), nullable=False)
-
-	special_instructions = db.Column(db.Text(400), nullable=False)
-	department = db.Column(db.String(70), nullable=False)
-
-	item_description = db.Column(db.Text(500), nullable=False)
-	quantity = db.Column(db.Integer(), nullable=False)
-
-	date_requested = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
-
-	user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+	weight: db.Column(db.Integer(), nullable=False) #(weights will be rounded up to the nearest whole unit.) Optional for creating instruction, mandatory for shipping
+	has_shipped: db.Column(db.Boolean(), nullable=False)
+	tracking_number: db.Column(db.String(70), nullable=False)
+	carrier: db.Column(db.String(70), nullable=False)

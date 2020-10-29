@@ -8,8 +8,8 @@ from flask_login import current_user, logout_user, login_user
 @app.route("/dashboard")
 def home():
 	if current_user.is_authenticated:
-		shippings = Shipping.query.filter_by(author=current_user).all()
-		return render_template("dashboard.html", shippings=shippings)
+		# shippings = Shipping.query.filter_by(author=current_user).all()
+		return render_template("dashboard.html")
 	flash("Not yet logged in", "warning")
 	return redirect(url_for('login'))
 
