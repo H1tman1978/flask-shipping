@@ -81,8 +81,11 @@
 		e.preventDefault();
 
 		// Getting the name, email, password and re_password value using thier ID
-		const name = $("#name").val();
+		const first_name = $("#first_name").val();
+		const last_name = $("#last_name").val();
 		const email = $("#email").val();
+		const username = $("#username").val();
+		const slack_handle = $("#slack_handle").val();
 		const password = $("#password").val();
 		const re_password = $("#re_password").val();
 
@@ -100,7 +103,7 @@
 			req = $.ajax({
 				url: '/register',
 				type: 'POST',
-				data: {name:name, email:email, password:password},
+				data: {first_name, last_name, email, username, slack_handle, password},
 
 				// On success function, we get the data returned and
 				// check its value to decide what message we send

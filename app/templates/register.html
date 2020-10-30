@@ -32,6 +32,21 @@
                   <p class="login_legend">Sign Up To IBM Shipping Service</p>
                   <br>
                   <div class="row">
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control register_input" id="first_name" placeholder="First Name" required />
+                        <span class="error_span error1"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control register_input" id="last_name" placeholder="Last Name" required />
+                        <span class="error_span error1"></span>
+                      </div>
+                    </div>
+
                     <div class="col-md-6">
                       <div class="form-group">
                         <input type="email" class="form-control register_input" id="email" placeholder="Email Address" required />
@@ -40,20 +55,30 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input class="form-control register_input" id="name" placeholder="Fullname" required />
+                        <input class="form-control register_input" id="username" placeholder="Username" required />
                         <span class="error_span error2"></span>
                       </div>
                     </div>
-                    <hr id="line_break">
+
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input class="form-control register_input" id="password" placeholder="Password" required />
+                        <input class="form-control register_input" id="slack_handle" placeholder="Slack Handle" required />
+                        <span class="error_span error2"></span>
+                      </div>
+                    </div>
+
+                    <hr id="line_break">
+
+                    <div class="col-md-3" style="padding-right: 3px;">
+                      <div class="form-group">
+                        <input type="password" class="form-control register_input" id="password" placeholder="Password" required />
                         <span class="error_span error3"></span>
                       </div>
                     </div>
-                    <div class="col-md-6">
+
+                    <div class="col-md-3" style="padding-left: 3px;">
                       <div class="form-group">
-                        <input class="form-control register_input" id="re_password" placeholder="Password (Again) " required />
+                        <input type="password" class="form-control register_input" id="re_password" placeholder="Password (again) " required />
                         <span class="error_span error4"></span>
                       </div>
                     </div>
