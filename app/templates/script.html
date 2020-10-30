@@ -5,24 +5,24 @@
      $(".row_3").hide();
 
 	$("#next_btn1").on("click", function(){
-		$(".row_1").hide(1000, function(){
-			$(".row_2").show(1000, function(){
+		$(".row_1").hide(0, function(){
+			$(".row_2").show(0, function(){
 				$(".steps_icon").attr("src", "/static/assets/img/step2.svg");
 			});
 		});
 	});
 
 	$("#prev_btn1").on("click", function(){
-		$(".row_2").hide(1000, function(){
-			$(".row_1").show(1000, function(){
+		$(".row_2").hide(0, function(){
+			$(".row_1").show(0, function(){
 				$(".steps_icon").attr("src", "/static/assets/img/step1.svg");
 			});
 		});
 	});
 
 	$("#prev_btn2").on("click", function(){
-		$(".row_3").hide(1000, function(){
-			$(".row_2").show(1000, function(){
+		$(".row_3").hide(0, function(){
+			$(".row_2").show(0, function(){
 				$(".steps_icon").attr("src", "/static/assets/img/step2.svg");
 			});
 		});
@@ -33,34 +33,33 @@
 	$("#shipping_form").on("submit", function(e){
 		e.preventDefault();
 
-		$(".row_2").hide(1000, function(){
-			$(".row_3").show(1000, function(){
+		$(".row_2").hide(0, function(){
+			$(".row_3").show(0, function(){
 				$(".steps_icon").attr("src", "/static/assets/img/step3.svg");
 
-				var ship_to_company = $("#ship_to_company").val();
-				var ship_to_address = $("#ship_to_address").val();
-				var ship_to_city = $("#ship_to_city").val();
-				var ship_to_state = $("#ship_to_state").val();
-				var ship_to_zip = $("#ship_to_zip").val();
-				var special_instructions = $("#special_instructions").val();
-				var ship_to_phone_number = $("#ship_to_phone_number").val();
+				var attention = $("#attention").val();
+				var company = $("#company").val();
+				var address1 = $("#address1").val();
+				var address2 = $("#address2").val();
+				var city = $("#city").val();
+				var state_province = $("#state_province").val();
+				var postal_code = $("#postal_code").val();
+				var country = $("#country").val();
+				var template_name = $("#template_name").val();
 
-				var ship_from_company = $("#ship_from_company").val();
-				var senders_name = $("#senders_name").val();
-				var ship_from_address = $("#ship_from_address").val();
-				var ship_from_city = $("#ship_from_city").val();
-				var ship_from_state = $("#ship_from_state").val();
-				var ship_from_zip = $("#ship_from_zip").val();
-				var external_phone_number = $("#external_phone_number").val();
-				var department = $("#department").val();
 
-				var item_description = $("#item_description").val();
-				var quantity = $("#quantity").val();
+				var type = $("#type").val();
+				var length = $("#length").val();
+				var width = $("#width").val();
+				var height = $("#height").val();
+				var weight = $("#weight").val();
+				var tracking_number = $("#tracking_number").val();
+				var carrier = $("#carrier").val();
 
 				req = $.ajax({
 					url: '/request_shipping',
 					type: 'POST',
-					data: { ship_to_company, ship_to_address, ship_to_city, ship_to_state, ship_to_zip, special_instructions, ship_to_phone_number, ship_from_company, senders_name, ship_from_address, ship_from_city, ship_from_state, ship_from_zip, external_phone_number, department, item_description, quantity },
+					data: { attention, company, address1, address2, city, state_province, postal_code, country, template_name, type, length, width, height, weight, tracking_number, carrier },
 					success: function(){
 						window.location.replace("/dashboard").delay(10000);
 					},

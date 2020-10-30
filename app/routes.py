@@ -1,5 +1,5 @@
 from app import app, bcrypt, db
-from app.models import Users, Shipping
+from app.models import Users, Shipping, HandlingUnit
 from flask import render_template, request,\
 	redirect, url_for, jsonify, flash
 from flask_login import current_user, logout_user, login_user
@@ -60,7 +60,20 @@ def shipping():
 		if request.method == "POST":
 			data = request.form
 
-			
+			new_shipping = Shipping(attention=data["attention"], company=data["company"],\
+				address1=data["address1"], address2=data["address2"], city=data["city"],\
+				state_province=data["state_province"], postal_code=data["postal_code"],\
+				country=data["country"], template_name=data["template_name"],\
+				author=current_user)
+
+			db.session.add(new_shipping)
+
+			new_handlingUnit = HandlingUnit(type=data["type"], length=data["length"],\
+				width=data["width"], height=data["height"], weight=data["weight"],\
+				has_shipped=False, tracking_number=data["tracking_number"],\
+				carrier=data["carrier"], shipping_handling_unit=new_shipping)
+
+			db.session.add(new_handlingUnit)
 
 			db.session.commit()
 			return jsonify({'data':'success'})
