@@ -12,7 +12,7 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 migrate = Migrate(app, db)
 
-gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=False,\
-	force_lower=False, use_ssl=False, base_url=None)
+gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=False,
+                    force_lower=False, use_ssl=False, base_url=None)
 
 from app.routes import *
