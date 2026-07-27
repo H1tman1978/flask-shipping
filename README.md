@@ -1,12 +1,22 @@
-# flask-base
+# flask-shipping
+
+An open-source Flask-based shipping web application.
+
+Built on top of the excellent [flask-base](https://github.com/hack4impact/flask-base) template, this project adapts the boilerplate for shipping / logistics workflows (orders, tracking, admin management, etc.).
+
+**Status:** Mature foundation from flask-base + project-specific adaptations. Last major activity 2024. Ready for further feature work, modernization, and portfolio demos.
+
+---
+
+## Original flask-base Badges & Overview
+
 [![Circle CI](https://circleci.com/gh/hack4impact/flask-base.svg?style=svg)](https://circleci.com/gh/hack4impact/flask-base) 
 [![Code Climate](https://codeclimate.com/github/hack4impact/flask-base/badges/gpa.svg)](https://codeclimate.com/github/hack4impact/flask-base/coverage)
-[![Issue Count](https://codeclimate.com/github/hack4impact/flask-base/badges/issue_count.svg)](https://codeclimate.com/github/hack4impact/flask-base) ![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg)  ![python2.x](https://img.shields.io/badge/python-2.x-yellow.svg)
+[![Issue Count](https://codeclimate.com/github/hack4impact/flask-base/badges/issue_count.svg)](https://codeclimate.com/github/hack4impact/flask-base) ![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg)
 
 ![flask-base](readme_media/logo.png)
 
 A Flask application template with the boilerplate code already done for you.
-
 
 **Documentation available at [http://hack4impact.github.io/flask-base](http://hack4impact.github.io/flask-base).**
 
@@ -230,3 +240,7 @@ https://medium.freecodecamp.com/how-we-got-a-2-year-old-repo-trending-on-github-
 
 ## License
 [MIT License](LICENSE.md)
+
+---
+
+**Portfolio note:** This repository is part of [Tony Rolfe](https://github.com/TonyRolfe)'s public portfolio. Future work will focus on shipping-domain features, modern Python/Flask practices, improved testing, and deployment demos.
